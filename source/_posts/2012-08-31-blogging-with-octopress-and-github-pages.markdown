@@ -6,7 +6,7 @@ comments: true
 categories: [octopress, github]
 ---
 
-I've decided to start a blog with [Github pages]({%http://pages.github.com%}) and [Octopress]({%http://octopress.org%}) The starting was seamless, except I've created github project with wrong name. If you get an "ERROR" when you deploy, then check the github project name.
+I've decided to start a blog with [Github pages](http://pages.github.com) and [Octopress](http://octopress.org) The starting was seamless, except I've created github project with wrong name. If you get an "ERROR" when you deploy, then check the github project name.
 
 The correct name contains github.com!
 {%img right /images/post/github-error.png rake deploy error%}
