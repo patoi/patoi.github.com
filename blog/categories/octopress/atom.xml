@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | developerof<span style="color:red">.</span>com]]></title>
   <link href="http://patoi.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://patoi.github.com/"/>
-  <updated>2012-08-31T19:19:07+02:00</updated>
+  <updated>2012-08-31T19:26:07+02:00</updated>
   <id>http://patoi.github.com/</id>
   <author>
     <name><![CDATA[István Pató]]></name>
@@ -18,10 +18,10 @@
     <link href="http://patoi.github.com/blog/2012/08/31/blogging-with-octopress-and-github-pages/"/>
     <updated>2012-08-31T18:52:00+02:00</updated>
     <id>http://patoi.github.com/blog/2012/08/31/blogging-with-octopress-and-github-pages</id>
-    <content type="html"><![CDATA[<p>I've decided to start a blog with <a href="{%http://pages.github.com%}">Github pages</a> and <a href="{%http://octopress.org%}">Octopress</a> The starting was seamless, except I've created github project with wrong name. If you get an "ERROR" when you deploy, then check the github project name.</p>
+    <content type="html"><![CDATA[<p>I've decided to start a blog with <a href="http://pages.github.com">Github pages</a> and <a href="http://octopress.org">Octopress</a> The starting was seamless, except I've created github project with wrong name. If you get an "ERROR" when you deploy, then check the github project name.</p>
 
 <p>The correct name contains github.com!
-{%img right /images/post/github-error.png rake deploy error%}</p>
+<img class="right" src="/images/post/github-error.png" title="rake deploy error" ></p>
 ]]></content>
   </entry>
   
