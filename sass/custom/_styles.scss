@@ -1,4 +1,5 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-body > header { background: #262c33 url("/images/banner.jpg");}
+body > header { background: #262c33 url("/images/banner.jpg"); height: 360px;}
+hgroup > h2 {color: white; opacity: 0.9}
