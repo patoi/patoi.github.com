@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://patoi.github.com
-title: developerof.com
-subtitle: Blogging about software development
+title: developerof<span style="color:red">.</span>com
+subtitle: Software development - Do you see the whole picture?
 author: István Pató
 simple_search: http://google.com/search
 description:
