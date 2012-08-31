@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[developerof.com]]></title>
+  <title><![CDATA[developerof<span style="color:red">.</span>com]]></title>
   <link href="http://patoi.github.com/atom.xml" rel="self"/>
   <link href="http://patoi.github.com/"/>
-  <updated>2012-08-31T18:35:22+02:00</updated>
+  <updated>2012-08-31T18:46:52+02:00</updated>
   <id>http://patoi.github.com/</id>
   <author>
     <name><![CDATA[István Pató]]></name>
