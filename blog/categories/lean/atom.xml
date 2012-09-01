@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[developerof.com]]></title>
-  <link href="http://www.developerof.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: lean | developerof.com]]></title>
+  <link href="http://www.developerof.com/blog/categories/lean/atom.xml" rel="self"/>
   <link href="http://www.developerof.com/"/>
   <updated>2012-09-01T15:28:18+02:00</updated>
   <id>http://www.developerof.com/</id>
@@ -18,13 +18,13 @@
     <link href="http://www.developerof.com/blog/2012/09/01/when-the-customer-is-the-biggest-risk/"/>
     <updated>2012-09-01T15:06:00+02:00</updated>
     <id>http://www.developerof.com/blog/2012/09/01/when-the-customer-is-the-biggest-risk</id>
-    <content type="html"><![CDATA[<p>When I start a development project with my team, I get at least two constraints: deadline and fixed budget. It&#8217;s been my experience that deadline is near and budget is low.</p>
+    <content type="html"><![CDATA[<p>When I start a development project with my team, I get at least two constraints: deadline and fixed budget. It's been my experience that deadline is near and budget is low.</p>
 
 <blockquote><p>So, there is no time to waste!</p></blockquote>
 
 <p>Using <a href="http://www.poppendieck.com">lean</a> approach is the best way to the success. What does it mean to be lean? Check out <a href="http://prezi.com/cihxni4tajvj/lean-software-development/">my lean presentation</a></p>
 
-<p>Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer&#8217;s own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to <em>known constraints</em>.</p>
+<p>Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer's own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to <em>known constraints</em>.</p>
 
 <p>In addition, sometimes there are <em>latent constraints</em> on customer side:</p>
 
@@ -50,18 +50,6 @@
 
 
 <p>If you say yes to all viewpoints, then start the project.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blogging with Octopress and Github pages]]></title>
-    <link href="http://www.developerof.com/blog/2012/08/31/blogging-with-octopress-and-github-pages/"/>
-    <updated>2012-08-31T18:52:00+02:00</updated>
-    <id>http://www.developerof.com/blog/2012/08/31/blogging-with-octopress-and-github-pages</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve decided to start a blog with <a href="http://pages.github.com">Github pages</a> and <a href="http://octopress.org">Octopress</a> The starting was seamless, except I&#8217;ve created github project with wrong name. If you get an &#8220;ERROR&#8221; when you deploy, then check the github project name.</p>
-
-<p>The correct name contains github.com!
-<img class="right" src="http://www.developerof.com/images/post/github-error.png" title="rake deploy error" ></p>
 ]]></content>
   </entry>
   
