@@ -124,7 +124,28 @@
 </div>
 <aside class="sidebar">
   
-    <section>
+    
+<section>
+  <img src="http://gravatar.com/avatar/44a636098dd3f7c87dfc2af6f95bf504" alt="Gravatar image" title="Gravatar Image" />
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("patoistvan", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/patoistvan" class="twitter-follow-button" data-show-count="true">Follow @patoistvan</a>
+  
+</section>
+
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -162,23 +183,6 @@
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("patoistvan", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/patoistvan" class="twitter-follow-button" data-show-count="true">Follow @patoistvan</a>
-  
 </section>
 
 
