@@ -5,6 +5,7 @@ date: 2012-09-01 15:06
 comments: true
 categories: lean
 ---
+
 When I start a development project with my team, I get at least two constraints: deadline and fixed budget. It's been my experience that deadline is near and budget is low.
 
 > So, there is no time to waste!
@@ -12,7 +13,7 @@ When I start a development project with my team, I get at least two constraints:
 Using [lean](http://www.poppendieck.com) approach is the best way to the success. What does it mean to be lean? Check out [my lean presentation](http://prezi.com/cihxni4tajvj/lean-software-development/)
 
 Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer's own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to _known constraints_.
-
+<!-- more -->
 In addition, sometimes there are _latent constraints_ on customer side:
 
 * low workplace culture
