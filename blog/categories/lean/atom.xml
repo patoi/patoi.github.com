@@ -4,7 +4,7 @@
   <title><![CDATA[Category: lean | developerof.com]]></title>
   <link href="http://www.developerof.com/blog/categories/lean/atom.xml" rel="self"/>
   <link href="http://www.developerof.com/"/>
-  <updated>2012-09-01T15:33:24+02:00</updated>
+  <updated>2012-09-01T15:43:26+02:00</updated>
   <id>http://www.developerof.com/</id>
   <author>
     <name><![CDATA[István Pató]]></name>
@@ -25,6 +25,9 @@
 <p>Using <a href="http://www.poppendieck.com">lean</a> approach is the best way to the success. What does it mean to be lean? Check out <a href="http://prezi.com/cihxni4tajvj/lean-software-development/">my lean presentation</a></p>
 
 <p>Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer's own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to <em>known constraints</em>.</p>
+
+<!-- more -->
+
 
 <p>In addition, sometimes there are <em>latent constraints</em> on customer side:</p>
 
