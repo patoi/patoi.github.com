@@ -23,7 +23,7 @@ In addition, sometimes there are _latent constraints_ on customer side:
 
 These _latent constaints_ are very important! My experience that, any of these will lead to failure. In that case, _the customer is the biggest risk_.
 
-## Conclusion ##
+## Conclusion
 Before you contract to a project consider the following viewpoints:
 
 1. Project have a reasonable deadline.
