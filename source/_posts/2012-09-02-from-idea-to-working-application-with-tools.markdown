@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "From idea to working application"
+title: "From idea to working application with tools"
 date: 2012-09-02 11:02
 comments: true
-categories: [lean, tool, scrum, netbeans, mercurial, git, jenkins, cucumber, bdd, tdd, redmine, maven, nexus, java]
+categories: [lean, tool, scrum, netbeans, mercurial, git, jenkins, cucumber, bdd, tdd, redmine, maven, nexus, java, jmeter]
 published: false
 ---
 In the past, I have seen a development team who have optimized a part of the development process. They focused on write of Java code and automated some code generation. Of course, they have been failed in delivery software. Today we have [Lean Software Development](http://www.poppendieck.com/), so we know what means __Optimize the Whole__ and __Focus on the Entire Value Stream__.
@@ -18,7 +18,7 @@ We've been collecting all requirements, because they are constantly changing. Yo
 
 ## Continuous delivery
 
-Tools: _NetBeans, DVCS, Apache Maven, JUnit, Spring, Automated Integration Test, Automated Acceptance Test, User Acceptance Test, WebDriver, Cucumber, Code review, Logging, Redmine_
+Tools: _NetBeans, DVCS, Apache Maven, JUnit, Spring, Automated Integration Test, Automated Acceptance Test, User Acceptance Test, WebDriver, Cucumber, jMeter, Code review, Logging, Redmine_
 
 We do not optimize just writing of Java code. We have been optimizing the whole process. [Continuous delivery](http://en.wikipedia.org/wiki/Continuous_delivery) helps your team to deliver fast and maintain a good quality.
 {%img left /images/post/team-discussion.jpg Discussions %}
@@ -40,5 +40,5 @@ Some examples:
 
 Most important features has been tested with AAT, but not all. We do manual test before we release a new version (UAT), focused on new features (product backlog items). At the end of the Sprint, we show features at Sprint Review Meeting.
 
-## Continuous Improvement
+## Conclusion
 
