@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - developerof.com</title>
+  <title>The Road To Continuous Delivery - developerof.com</title>
   <meta name="author" content="István Pató">
 
   
-  <meta name="description" content="Blog Archive 2012 The Road To Continuous Delivery
-Sep 08 2012 Lean Tools of Continuous Delivery
-Sep 02 2012 posted in bdd, cucumber, git, java, &hellip;">
+  <meta name="description" content="I&#8217;ve been working at my company since 1997. I&#8217;ve created with my team more than 36 Java web application and 29 Oracle database.
+When we &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Sep 02 2012 posted in bdd, cucumber, git, java, &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.developerof.com/blog/archives/">
+  <link rel="canonical" href="http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,73 +76,152 @@ Sep 02 2012 posted in bdd, cucumber, git, java, &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">The Road to Continuous Delivery</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-08T18:35:00+02:00" pubdate data-updated="true">Sep 8<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I&#8217;ve been working at my company since 1997. I&#8217;ve created with my team more than 36 Java web application and 29 Oracle database.
+When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
+We didn&#8217;t write unit test just Java main methods, and we didn&#8217;t hear about integration test.
+Few years later we have started writing unit tests, and more few years later integration tests.
+<img class="left" src="/images/post/cucumber-report.png" title="Cucumber report" >
+Today, we have been using several continuous integration and delivery tools: Redmine, Maven, Jenkins, DVCS, Selenium/WebDriver, JUnit, Cucumber.
+To be able to achieve continuous delivery, it has to start with continuous integration.
+Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It&#8217;s all about efficiency.</p>
 
-  
-  <h2>2012</h2>
+<blockquote><p>Continuous delivery is able to raise your efficiency.</p></blockquote>
 
-<article>
-  
-<h1><a href="/blog/2012/09/08/the-road-to-continuous-delivery/">The Road To Continuous Delivery</a></h1>
-<time datetime="2012-09-08T18:35:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>08</span> <span class='year'>2012</span></time>
+<p>Before you start Continuous Delivery or Continuous Integration, check this list:</p>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/09/02/lean-tools-of-continuous-delivery/">Lean Tools of Continuous Delivery</a></h1>
-<time datetime="2012-09-02T11:02:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>02</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bdd/'>bdd</a>, <a class='category' href='/blog/categories/cucumber/'>cucumber</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/jenkins/'>jenkins</a>, <a class='category' href='/blog/categories/jmeter/'>jmeter</a>, <a class='category' href='/blog/categories/lean/'>lean</a>, <a class='category' href='/blog/categories/maven/'>maven</a>, <a class='category' href='/blog/categories/mercurial/'>mercurial</a>, <a class='category' href='/blog/categories/netbeans/'>netbeans</a>, <a class='category' href='/blog/categories/nexus/'>nexus</a>, <a class='category' href='/blog/categories/redmine/'>redmine</a>, <a class='category' href='/blog/categories/scrum/'>scrum</a>, <a class='category' href='/blog/categories/tdd/'>tdd</a>, <a class='category' href='/blog/categories/tool/'>tool</a></span>
-</footer>
+<!--more-->
 
 
-</article>
+<h3>Software Configuration Management</h3>
+
+<ol>
+<li>Creating a new developer environment takes about 30 minutes.</li>
+<li>Version number syntax is carved in stone (snapshots and releases).</li>
+<li>You can create &#8216;one step build&#8217;.</li>
+<li>Your build repeatable.</li>
+<li>You have runtime environment names.</li>
+<li>Code is able to running on developer machine.</li>
+<li>You have a Wiki, and a page with description of SCM.</li>
+<li>Lead Developer is a &#8216;software configuration master&#8217; (master and no manager).</li>
+<li>You&#8217;ve a bug, task, feature database.</li>
+</ol>
 
 
+<h3>Developer activities</h3>
 
-<article>
-  
-<h1><a href="/blog/2012/09/01/when-the-customer-is-the-biggest-risk/">When the customer is the biggest risk</a></h1>
-<time datetime="2012-09-01T15:06:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/lean/'>lean</a></span>
-</footer>
-
-
-</article>
-
+<ol>
+<li>Developer fixes bugs before writing new code.</li>
+<li>Developer always writes a unit test to reproduce a bug before start a bug fixing.</li>
+<li>Developer can prove the issues have been fixed (unit test, integration test).</li>
+<li>Developer can reproduce a bug on the developer machine, or at least not in the production environment.</li>
+<li>Developer knows what the project goal is.</li>
+<li>Developer knows what she/he is working on today and tomorrow.</li>
+<li>Developers have guidelines: coding style, specification, etc.</li>
+</ol>
 
 
-<article>
-  
-<h1><a href="/blog/2012/08/31/blogging-with-octopress-and-github-pages/">Blogging with Octopress and Github pages</a></h1>
-<time datetime="2012-08-31T18:52:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>31</span> <span class='year'>2012</span></time>
+<h3>Team</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<ol>
+<li>You have a TEAM. Not programmers, not testers, not designers, not managers.</li>
+<li>Team size between 3-8 people.</li>
+<li>Team is older than 3 months.</li>
+<li>Team is self organized.</li>
+<li>Team visualizes up-to-date their own work, schedules and impediments.</li>
+<li>Team&#8217;s able to carry out specifications, codes, automatic tests and releases.</li>
+<li>Team has been continuously developing their own process.</li>
+<li>Team is independent of other teams (or individuals).</li>
+<li>One team - one mission. One mission - one team.</li>
+</ol>
 
 
-</article>
+<h3>Plan</h3>
 
+<ol>
+<li>Product has a feature list (product backlog).</li>
+<li>You have a roadmap.</li>
+<li>You are able to do less.</li>
+<li>Product has validated before it&#8217;s releasing to production.</li>
+<li>All plans have been visualized for teams (Kanban, Scrum).</li>
+</ol>
+
+
+<h2>Conclusion</h2>
+
+<p><img class="left" src="/images/post/jenkins.png" title="Jenkins" >
+To achieve continuous delivery: it&#8217;s not a revolution, it&#8217;s an evolution. You need a matured company, so
+in first stage: check the list, and try to achieve goals, and do not forget: to be able to achieve continuous delivery, it has to start with continuous integration.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">István Pató</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-08T18:35:00+02:00" pubdate data-updated="true">Sep 8<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery/" data-via="patoistvan" data-counturl="http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/02/lean-tools-of-continuous-delivery/" title="Previous Post: Lean Tools of Continuous Delivery">&laquo; Lean Tools of Continuous Delivery</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
