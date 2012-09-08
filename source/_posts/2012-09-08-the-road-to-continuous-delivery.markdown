@@ -3,7 +3,7 @@ layout: post
 title: "The Road To Continuous Delivery"
 date: 2012-09-08 18:35
 comments: true
-categories:
+categories: [lean, continuous delivery, continuous integration, jenkins, cucumber, maven, redmine, selenium, webdriver, junit, team]
 ---
 I've been working at my company since 1997. I've created with my team more than 36 Java web application and 29 Oracle database.
 When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
