@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[developerof.com]]></title>
-  <link href="http://www.developerof.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: continuous delivery | developerof.com]]></title>
+  <link href="http://www.developerof.com/blog/categories/continuous-delivery/atom.xml" rel="self"/>
   <link href="http://www.developerof.com/"/>
   <updated>2012-09-08T19:16:38+02:00</updated>
   <id>http://www.developerof.com/</id>
@@ -18,14 +18,14 @@
     <link href="http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery/"/>
     <updated>2012-09-08T18:35:00+02:00</updated>
     <id>http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been working at my company since 1997. I&#8217;ve created with my team more than 36 Java web application and 29 Oracle database.
+    <content type="html"><![CDATA[<p>I've been working at my company since 1997. I've created with my team more than 36 Java web application and 29 Oracle database.
 When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
-We didn&#8217;t write unit test just Java main methods, and we didn&#8217;t hear about integration test.
+We didn't write unit test just Java main methods, and we didn't hear about integration test.
 Few years later we have started writing unit tests, and more few years later integration tests.
-<img class="left" src="http://www.developerof.com/images/post/cucumber-report.png" title="Cucumber report" >
+<img class="left" src="/images/post/cucumber-report.png" title="Cucumber report" >
 Today, we have been using several continuous integration and delivery tools: Redmine, Maven, Jenkins, DVCS, Selenium/WebDriver, JUnit, Cucumber.
 To be able to achieve continuous delivery, it has to start with continuous integration.
-Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It&#8217;s all about efficiency.</p>
+Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It's all about efficiency.</p>
 
 <blockquote><p>Continuous delivery is able to raise your efficiency.</p></blockquote>
 
@@ -39,13 +39,13 @@ Of course, we are developing our process: we have some weakness and we can find 
 <ol>
 <li>Creating a new developer environment takes about 30 minutes.</li>
 <li>Version number syntax is carved in stone (snapshots and releases).</li>
-<li>You can create &#8216;one step build&#8217;.</li>
+<li>You can create 'one step build'.</li>
 <li>Your build repeatable.</li>
 <li>You have runtime environment names.</li>
 <li>Code is able to running on developer machine.</li>
 <li>You have a Wiki, and a page with description of SCM.</li>
-<li>Lead Developer is a &#8216;software configuration master&#8217; (master and no manager).</li>
-<li>You&#8217;ve a bug, task, feature database.</li>
+<li>Lead Developer is a 'software configuration master' (master and no manager).</li>
+<li>You've a bug, task, feature database.</li>
 </ol>
 
 
@@ -70,7 +70,7 @@ Of course, we are developing our process: we have some weakness and we can find 
 <li>Team is older than 3 months.</li>
 <li>Team is self organized.</li>
 <li>Team visualizes up-to-date their own work, schedules and impediments.</li>
-<li>Team&#8217;s able to carry out specifications, codes, automatic tests and releases.</li>
+<li>Team's able to carry out specifications, codes, automatic tests and releases.</li>
 <li>Team has been continuously developing their own process.</li>
 <li>Team is independent of other teams (or individuals).</li>
 <li>One team - one mission. One mission - one team.</li>
@@ -83,15 +83,15 @@ Of course, we are developing our process: we have some weakness and we can find 
 <li>Product has a feature list (product backlog).</li>
 <li>You have a roadmap.</li>
 <li>You are able to do less.</li>
-<li>Product has validated before it&#8217;s releasing to production.</li>
+<li>Product has validated before it's releasing to production.</li>
 <li>All plans have been visualized for teams (Kanban, Scrum).</li>
 </ol>
 
 
 <h2>Conclusion</h2>
 
-<p><img class="left" src="http://www.developerof.com/images/post/jenkins.png" title="Jenkins" >
-To achieve continuous delivery: it&#8217;s not a revolution, it&#8217;s an evolution. You need a matured company, so
+<p><img class="left" src="/images/post/jenkins.png" title="Jenkins" >
+To achieve continuous delivery: it's not a revolution, it's an evolution. You need a matured company, so
 in first stage: check the list, and try to achieve goals, and do not forget: to be able to achieve continuous delivery, it has to start with continuous integration.</p>
 ]]></content>
   </entry>
@@ -112,15 +112,15 @@ in first stage: check the list, and try to achieve goals, and do not forget: to 
 
 <p>Tools: <em>Scrum, Whiteboard, Sketchbook, UML notation, Wiki, Email, Chat</em></p>
 
-<p><img class="left" src="http://www.developerof.com/images/post/sketchbook.jpg" title="Use sketchbook!" >
-We&#8217;ve been collecting continuously all requirements, because they are constantly changing. Your best friends are sketchbook and whiteboard. I&#8217;m drawing diagrams, screens, data blocks with connections, etc. I’ve always been a big fan of visualization. After all, I&#8217;ve publishing results: wiki, email, product backlog, etc. <em>Do not forget to eliminate waste!</em> Throws out heavyweight and unnecessary tools.</p>
+<p><img class="left" src="/images/post/sketchbook.jpg" title="Use sketchbook!" >
+We've been collecting continuously all requirements, because they are constantly changing. Your best friends are sketchbook and whiteboard. I'm drawing diagrams, screens, data blocks with connections, etc. I’ve always been a big fan of visualization. After all, I've publishing results: wiki, email, product backlog, etc. <em>Do not forget to eliminate waste!</em> Throws out heavyweight and unnecessary tools.</p>
 
 <h2>Continuous delivery</h2>
 
 <p>Tools: <em>NetBeans, DVCS, Apache Maven, JUnit, Spring, Automated Integration Test, Automated Acceptance Test, User Acceptance Test, WebDriver, Cucumber, jMeter, Code review, Logging, Redmine</em></p>
 
 <p>Please, do not optimize just one part of development process! Optimize the whole process from start to finish! <a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous delivery</a> helps your team to deliver fast and maintain a good quality.
-<img class="left" src="http://www.developerof.com/images/post/team-discussion.jpg" title="Discussions" >
+<img class="left" src="/images/post/team-discussion.jpg" title="Discussions" >
 How we do it: we start with Sprint planning and determine the most important tasks. <strong>Do not waste your time and money!</strong> Determine the most important tasks! If necessary, programmer and product owner create more detailed specification. <strong>Do not create unnecessary documentation!</strong> The created specification often just one page! We have been using sketchbook, whiteboard and UML drawing program. After all, we publish it.</p>
 
 <blockquote><p>We know, why we have been using a particular tool, this is a <strong>conscious choice</strong>.</p></blockquote>
@@ -132,11 +132,11 @@ How we do it: we start with Sprint planning and determine the most important tas
 <li>We do not use Ant, but Maven. Maven has dependecy managment, life cycle, and is capable to release software from CLI.</li>
 <li>We use DVCS: Mercurial and Git. We can commit offline, and merge branch between developer. It is tracking changesets, not files.</li>
 <li>We have been writing unit test. This is a standard solution for testing our daily work: all unit test runs from NetBeans after every code compile, so we are always testing all changes!</li>
-<li>We use Spring Framework, because &#8220;Write Once - Run Anywhere&#8221; is working. Spring upgrade on any project are seamless. It doesn&#8217;t accumulate technical debt. It is free and costless!</li>
+<li>We use Spring Framework, because "Write Once - Run Anywhere" is working. Spring upgrade on any project are seamless. It doesn't accumulate technical debt. It is free and costless!</li>
 </ol>
 
 
-<p><img class="left" src="http://www.developerof.com/images/post/cucumber.jpg" title="Cucumber feature file" > Jenkins CI server start testing <em>Integration Tests</em> and <em>Automated Acceptance Test</em> after code have been commited to DVCS. <a href="http://cukes.info/">Cucumber</a> is the best tool for AAT (Automated Acceptance Test). I&#8217;ve tested several other BDD tools (Spock, jBehave, etc.) before we start using Cucumber. Cucumber feature text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format! Read more: <a href="http://pragprog.com/book/hwcuc/the-cucumber-book">The Cucumber Book: Behaviour-Driven Development for Testers and Developers</a> - sample codes has been written in ruby, but useful to Java developers too.</p>
+<p><img class="left" src="/images/post/cucumber.jpg" title="Cucumber feature file" > Jenkins CI server start testing <em>Integration Tests</em> and <em>Automated Acceptance Test</em> after code have been commited to DVCS. <a href="http://cukes.info/">Cucumber</a> is the best tool for AAT (Automated Acceptance Test). I've tested several other BDD tools (Spock, jBehave, etc.) before we start using Cucumber. Cucumber feature text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format! Read more: <a href="http://pragprog.com/book/hwcuc/the-cucumber-book">The Cucumber Book: Behaviour-Driven Development for Testers and Developers</a> - sample codes has been written in ruby, but useful to Java developers too.</p>
 
 <blockquote><p>Do not waste your time to try testing all feature with AAT!</p></blockquote>
 
@@ -145,61 +145,6 @@ How we do it: we start with Sprint planning and determine the most important tas
 <h2>Conclusion</h2>
 
 <p>Choose your tools for <em>Continuous Delivery</em> and do not forget: <strong>Optimize the Whole</strong> and <strong>Focus on the Entire Value Stream</strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[When the customer is the biggest risk]]></title>
-    <link href="http://www.developerof.com/blog/2012/09/01/when-the-customer-is-the-biggest-risk/"/>
-    <updated>2012-09-01T15:06:00+02:00</updated>
-    <id>http://www.developerof.com/blog/2012/09/01/when-the-customer-is-the-biggest-risk</id>
-    <content type="html"><![CDATA[<p>When I start a development project with my team, I get at least two constraints: deadline and fixed budget. It&#8217;s been my experience that deadline is near and budget is low.</p>
-
-<blockquote><p>So, there is no time to waste!</p></blockquote>
-
-<p>Using <a href="http://www.poppendieck.com">lean</a> approach is the best way to the success. What does it mean to be lean? Check out <a href="http://prezi.com/cihxni4tajvj/lean-software-development/">my lean presentation</a></p>
-
-<p>Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer&#8217;s own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to <em>known constraints</em>.</p>
-
-<!-- more -->
-
-
-<p>In addition, sometimes there are <em>latent constraints</em> on customer side:</p>
-
-<ul>
-<li>low workplace culture</li>
-<li>client is not committed</li>
-<li>no customer experiences in software development</li>
-<li>unreal budget</li>
-</ul>
-
-
-<p>These <em>latent constaints</em> are very important! My experience that, any of these will lead to failure. In that case, <em>the customer is the biggest risk</em>.</p>
-
-<h2>Conclusion</h2>
-
-<p>Before you contract to a project consider the following viewpoints:</p>
-
-<ol>
-<li>Project have a reasonable deadline.</li>
-<li>The <em>known constraints</em> are acceptable and you can meet these demands.</li>
-<li>There is no <em>latent constraint</em>.</li>
-</ol>
-
-
-<p>If you say yes to all viewpoints, then start the project.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blogging with Octopress and Github pages]]></title>
-    <link href="http://www.developerof.com/blog/2012/08/31/blogging-with-octopress-and-github-pages/"/>
-    <updated>2012-08-31T18:52:00+02:00</updated>
-    <id>http://www.developerof.com/blog/2012/08/31/blogging-with-octopress-and-github-pages</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve decided to start a blog with <a href="http://pages.github.com">Github pages</a> and <a href="http://octopress.org">Octopress</a> The starting was seamless, except I&#8217;ve created github project with wrong name. If you get an &#8220;ERROR&#8221; when you deploy, then check the github project name.</p>
-
-<p>The correct name contains github.com!
-<img class="right" src="http://www.developerof.com/images/post/github-error.png" title="rake deploy error" ></p>
 ]]></content>
   </entry>
   

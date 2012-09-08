@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: continuous integration | developerof.com]]></title>
+  <link href="http://www.developerof.com/blog/categories/continuous-integration/atom.xml" rel="self"/>
+  <link href="http://www.developerof.com/"/>
+  <updated>2012-09-08T19:16:38+02:00</updated>
+  <id>http://www.developerof.com/</id>
+  <author>
+    <name><![CDATA[István Pató]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Road To Continuous Delivery]]></title>
+    <link href="http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery/"/>
+    <updated>2012-09-08T18:35:00+02:00</updated>
+    <id>http://www.developerof.com/blog/2012/09/08/the-road-to-continuous-delivery</id>
+    <content type="html"><![CDATA[<p>I've been working at my company since 1997. I've created with my team more than 36 Java web application and 29 Oracle database.
+When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
+We didn't write unit test just Java main methods, and we didn't hear about integration test.
+Few years later we have started writing unit tests, and more few years later integration tests.
+<img class="left" src="/images/post/cucumber-report.png" title="Cucumber report" >
+Today, we have been using several continuous integration and delivery tools: Redmine, Maven, Jenkins, DVCS, Selenium/WebDriver, JUnit, Cucumber.
+To be able to achieve continuous delivery, it has to start with continuous integration.
+Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It's all about efficiency.</p>
+
+<blockquote><p>Continuous delivery is able to raise your efficiency.</p></blockquote>
+
+<p>Before you start Continuous Delivery or Continuous Integration, check this list:</p>
+
+<!--more-->
+
+
+<h3>Software Configuration Management</h3>
+
+<ol>
+<li>Creating a new developer environment takes about 30 minutes.</li>
+<li>Version number syntax is carved in stone (snapshots and releases).</li>
+<li>You can create 'one step build'.</li>
+<li>Your build repeatable.</li>
+<li>You have runtime environment names.</li>
+<li>Code is able to running on developer machine.</li>
+<li>You have a Wiki, and a page with description of SCM.</li>
+<li>Lead Developer is a 'software configuration master' (master and no manager).</li>
+<li>You've a bug, task, feature database.</li>
+</ol>
+
+
+<h3>Developer activities</h3>
+
+<ol>
+<li>Developer fixes bugs before writing new code.</li>
+<li>Developer always writes a unit test to reproduce a bug before start a bug fixing.</li>
+<li>Developer can prove the issues have been fixed (unit test, integration test).</li>
+<li>Developer can reproduce a bug on the developer machine, or at least not in the production environment.</li>
+<li>Developer knows what the project goal is.</li>
+<li>Developer knows what she/he is working on today and tomorrow.</li>
+<li>Developers have guidelines: coding style, specification, etc.</li>
+</ol>
+
+
+<h3>Team</h3>
+
+<ol>
+<li>You have a TEAM. Not programmers, not testers, not designers, not managers.</li>
+<li>Team size between 3-8 people.</li>
+<li>Team is older than 3 months.</li>
+<li>Team is self organized.</li>
+<li>Team visualizes up-to-date their own work, schedules and impediments.</li>
+<li>Team's able to carry out specifications, codes, automatic tests and releases.</li>
+<li>Team has been continuously developing their own process.</li>
+<li>Team is independent of other teams (or individuals).</li>
+<li>One team - one mission. One mission - one team.</li>
+</ol>
+
+
+<h3>Plan</h3>
+
+<ol>
+<li>Product has a feature list (product backlog).</li>
+<li>You have a roadmap.</li>
+<li>You are able to do less.</li>
+<li>Product has validated before it's releasing to production.</li>
+<li>All plans have been visualized for teams (Kanban, Scrum).</li>
+</ol>
+
+
+<h2>Conclusion</h2>
+
+<p><img class="left" src="/images/post/jenkins.png" title="Jenkins" >
+To achieve continuous delivery: it's not a revolution, it's an evolution. You need a matured company, so
+in first stage: check the list, and try to achieve goals, and do not forget: to be able to achieve continuous delivery, it has to start with continuous integration.</p>
+]]></content>
+  </entry>
+  
+</feed>
