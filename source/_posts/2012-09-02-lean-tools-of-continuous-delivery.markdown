@@ -3,7 +3,7 @@ layout: post
 title: "Lean Tools of Continuous Delivery"
 date: 2012-09-02 11:02
 comments: true
-categories: [lean, tool, scrum, netbeans, mercurial, git, jenkins, cucumber, bdd, tdd, redmine, maven, nexus, java, jmeter]
+categories: [lean, tool, scrum, netbeans, mercurial, git, jenkins, cucumber, bdd, tdd, redmine, maven, nexus, java, jmeter, continuous delivery]
 published: true
 ---
 In the past, I have seen a development team who optimized a part of the development process. They focused on write of Java code and automated some code generation. Of course, they have been failed in delivery software. Today we have [Lean Software Development](http://www.poppendieck.com/), so we know what it means __Optimize the Whole__ and __Focus on the Entire Value Stream__.
