@@ -6,7 +6,7 @@ comments: true
 categories: lean
 ---
 
-When I start a development project with my team, I get at least two constraints: deadline and fixed budget. It's been my experience that deadline is near and budget is low.
+When I start a development project with my team, I get at least two constraints: deadline and fixed budget. In my experience, deadline is near and budget is low.
 
 > So, there is no time to waste!
 
@@ -21,13 +21,13 @@ In addition, sometimes there are _latent constraints_ on customer side:
 * no customer experiences in software development
 * unreal budget
 
-These _latent constaints_ are very important! My experience that, any of these will lead to failure. In that case, _the customer is the biggest risk_.
+These _latent constraints_ are very important! My experience that, any of these will lead to failure. In that case, _the customer is the biggest risk_.
 
 ## Conclusion
 Before you contract to a project consider the following viewpoints:
 
-1. Project have a reasonable deadline.
+1. Project has a reasonable deadline.
 1. The _known constraints_ are acceptable and you can meet these demands.
-1. There is no _latent constraint_.
+1. There isn't any _latent constraint_.
 
 If you say yes to all viewpoints, then start the project.
