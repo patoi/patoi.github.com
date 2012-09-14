@@ -30,4 +30,4 @@ Before you contract to a project consider the following viewpoints:
 1. The _known constraints_ are acceptable and you can meet these demands.
 1. There isn't any _latent constraint_.
 
-If you say yes to all viewpoints, then start the project.
+If you can say yes to all viewpoints, then start the project.
