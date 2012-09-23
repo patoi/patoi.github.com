@@ -128,7 +128,7 @@ service apache2 restart
 Navigate browser to redmine server address, and redmine login page will be shown.
 > Change default admin/admin user's password!!!
 
-__Do not forget__ Redmine host name settings after login: Click _Setting,_ choose _General Tab_ and set _Host name and path_ to YOUR_REAL_SERVER_NAME
+__Do not forget__ to set Redmine host name after login: click _Setting,_ choose _General Tab_ and set _Host name and path_ to YOUR_REAL_SERVER_NAME
 
 ## Conclusion
 {%img left /images/post/redmine1.png Redmine %}
