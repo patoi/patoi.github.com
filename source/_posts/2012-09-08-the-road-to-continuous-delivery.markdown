@@ -39,7 +39,7 @@ Before you start Continuous Delivery or Continuous Integration, check this list:
 1. Developers have guidelines: coding style, specification, etc.
 
 ### Team
-1. You have a TEAM. Not programmers, not testers, not designers, not managers.
+1. You must have a TEAM. Not programmers, not testers, not designers, not managers.
 1. Team size between 3-8 people.
 1. Team is older than 3 months.
 1. Team is self organized.
