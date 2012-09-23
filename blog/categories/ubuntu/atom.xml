@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | developerof.com]]></title>
   <link href="http://www.developerof.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://www.developerof.com/"/>
-  <updated>2012-09-23T18:07:59+02:00</updated>
+  <updated>2012-09-23T18:17:24+02:00</updated>
   <id>http://www.developerof.com/</id>
   <author>
     <name><![CDATA[István Pató]]></name>
@@ -205,7 +205,7 @@ You must get <em>"Your bundle is complete! Use <code>bundle show [gemname]</code
 
 <blockquote><p>Change default admin/admin user's password!!!</p></blockquote>
 
-<p><strong>Do not forget</strong> Redmine host name settings after login: Click <em>Setting,</em> choose <em>General Tab</em> and set <em>Host name and path</em> to YOUR_REAL_SERVER_NAME</p>
+<p><strong>Do not forget</strong> to set Redmine host name after login: click <em>Setting,</em> choose <em>General Tab</em> and set <em>Host name and path</em> to YOUR_REAL_SERVER_NAME</p>
 
 <h2>Conclusion</h2>
 
