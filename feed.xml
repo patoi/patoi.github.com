@@ -5,9 +5,26 @@
     <atom:link href="http://developerof.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://developerof.com</link>
     <description>Software Development Blog - developerof.com</description>
-    <pubDate>Sun, 23 Sep 2012 16:30:00 +0200</pubDate>
+    <pubDate>Sat, 30 Mar 2013 12:52:00 +0100</pubDate>
     <generator>The mighty Wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Blogging with Wintersmith</title>
+      <link>http://developerof.com/articles/blogging-with-wintersmith/</link>
+      <pubDate>Sat, 30 Mar 2013 12:52:00 +0100</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/blogging-with-wintersmith/</guid>
+      <author></author>
+      <description>&lt;p&gt;I&apos;ve decided to start a blog with &lt;a href=&quot;http://pages.github.com&quot;&gt;Github pages&lt;/a&gt; and &lt;a href=&quot;http://octopress.org&quot;&gt;Octopress&lt;/a&gt; last year. Now, I switch from Octopress to &lt;a href=&quot;http://jnordberg.github.com/wintersmith/&quot;&gt;Wintersmith&lt;/a&gt;. Wintersmith is a &lt;a href=&quot;http://nodejs.org/&quot;&gt;NodeJS&lt;/a&gt; based static site generator. it is simple and fast.
+
+&lt;/p&gt;
+&lt;h1&gt;Why did I change blog engine?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Ruby: just Octopress used Ruby on my machine. I&apos;m a programmer and I written codes in Java and JavaScript, I&apos;ve never used Ruby for other purpose.&lt;/li&gt;
+&lt;li&gt;Simplicity and Fast (Lean): Wintersmith is faster than Octopress generator and it has a simpler directory structure.&lt;/li&gt;
+&lt;li&gt;NodeJS: I like NodeJS, and I can change Wintersmith code as I want it.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     <item>
       <title>Install Redmine 2.1.0 on Ubuntu Server 12.04 64bit</title>
       <link>http://developerof.com/articles/install-redmine/</link>
