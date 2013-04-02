@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Tools of Continuous Delivery -Do you see the whole picture?
+    </title>
+    <link href="/favicon.png" rel="icon">
+    <link rel="alternate" href="http://developerof.com/feed.xml" type="application/rss+xml" title="Software Development Blog - developerof.com">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/github.css">
+    <link rel="stylesheet" href="/css/highlight/solarized_dark.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/patoi.css">
+    <meta name="author" content="István Pató">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-inner"><span class="big">Do you see the whole picture?</span>
+        <p class="lead">Software Development Blog - developerof.com</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div style="margin: 20px"><a href="/" class="back">&laquo; back to index</a>
+          <article>
+            <header>
+              <div class="posttimeBig">Sep 2nd, 2012</div>
+              <h2 class="bigger">Lean Tools of Continuous Delivery</h2><a href="https://twitter.com/share" data-via="patoistvan" data-hashtags="developerof.com" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </header>
+            <section class="post"><p>In the past, I have seen a development team who optimized a part of the development process. They focused on write of Java code and automated some code generation. Of course, they have been failed in delivery software. Today we have <a href="http://www.poppendieck.com/">Lean Software Development</a>, so we know what it means <strong>Optimize the Whole</strong> and <strong>Focus on the Entire Value Stream</strong>.
+
+</p>
+<p>We have been using several tools and methods at <a href="http://www.jurahungaria.com">my software development team</a> and we focus on the entire value stream. <em>Lean mentality requires lean tools and conscious choice!</em>
+<!--more-->
+</p>
+<h2>Discussions and planning</h2>
+<p>Tools: <em>Scrum, Whiteboard, Sketchbook, UML notation, Wiki, Email, Chat</em>
+
+</p>
+<p><img src="http://developerof.com/articles/lean-tools/sketchbook.jpg" alt="Use sketchbook">
+We&apos;ve been collecting continuously all requirements, because they are constantly changing. Your best friends are sketchbook and whiteboard. I&apos;m drawing diagrams, screens, data blocks with connections, etc. I’ve always been a big fan of visualization. After all, I&apos;ve publishing results: wiki, email, product backlog, etc. <em>Do not forget to eliminate waste!</em> Throws out heavyweight and unnecessary tools.
+
+</p>
+<h2>Continuous delivery</h2>
+<p>Tools: <em>NetBeans, DVCS, Apache Maven, JUnit, Spring, Automated Integration Test, Automated Acceptance Test, User Acceptance Test, WebDriver, Cucumber, jMeter, Code review, Logging, Redmine</em>
+
+</p>
+<p>Please, do not optimize just one part of development process! Optimize the whole process from start to finish! <a href="http://en.wikipedia.org/wiki/Continuous_delivery">Continuous delivery</a> helps your team to deliver fast and maintain a good quality.
+<img src="http://developerof.com/articles/lean-tools/team-discussion.jpg" alt="Discussions">
+How we do it: we start with Sprint planning and determine the most important tasks. <strong>Do not waste your time and money!</strong> Determine the most important tasks! If necessary, programmer and product owner create more detailed specification. <strong>Do not create unnecessary documentation!</strong> The created specification often just one page! We have been using sketchbook, whiteboard and UML drawing program. After all, we publish it.
+
+</p>
+<blockquote>
+<p>We know, why we have been using a particular tool, this is a <strong>conscious choice</strong>.
+
+</p>
+</blockquote>
+<p>Some examples:
+
+</p>
+<ol>
+<li>We do not use Eclipse editor, because NetBeans is simpler. We can start Maven project with it faster and cleaner. Tool version update is bug free. Code does not depend on it.</li>
+<li>We do not use Ant, but Maven. Maven has dependecy managment, life cycle, and is capable to release software from CLI.</li>
+<li>We use DVCS: Mercurial and Git. We can commit offline, and merge branch between developer. It is tracking changesets, not files.</li>
+<li>We have been writing unit test. This is a standard solution for testing our daily work: all unit test runs from NetBeans after every code compile, so we are always testing all changes!</li>
+<li>We use Spring Framework, because &quot;Write Once - Run Anywhere&quot; is working. Spring upgrade on any project are seamless. It doesn&apos;t accumulate technical debt. It is free and costless!</li>
+</ol>
+<p><img src="http://developerof.com/articles/lean-tools/cucumber.jpg" alt="Cucumber feature file"> Jenkins CI server start testing <em>Integration Tests</em> and <em>Automated Acceptance Test</em> after code have been commited to DVCS. <a href="http://cukes.info/">Cucumber</a> is the best tool for AAT (Automated Acceptance Test). I&apos;ve tested several other BDD tools (Spock, jBehave, etc.) before we start using Cucumber. Cucumber feature text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format! Read more: <a href="http://pragprog.com/book/hwcuc/the-cucumber-book">The Cucumber Book: Behaviour-Driven Development for Testers and Developers</a> - sample codes has been written in ruby, but useful to Java developers too.
+
+</p>
+<blockquote>
+<p>Do not waste your time to try testing all feature with AAT!
+
+</p>
+</blockquote>
+<p>Most important features has been tested with AAT, but not all. We do manual test before we release a new version (UAT), focused on new features (product backlog items). At the end of the Sprint, we show features at Sprint Review Meeting.
+
+</p>
+<h2>Conclusion</h2>
+<p>Choose your tools for <em>Continuous Delivery</em> and do not forget: <strong>Optimize the Whole</strong> and <strong>Focus on the Entire Value Stream</strong>
+</p>
+</section>
+          </article>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <div><img src="http://www.gravatar.com/avatar/bccd8a27bbf77651c3ad812e55df4a60.png" title="István Pató">
+          <div class="imgtext">István Pató, application developer and designer. Check out my tweets, and you will know who I am!</div>
+          <div class="mylinks"><a href="https://github.com/patoi">GitHub projects</a><br><a href="http://www.linkedin.com/pub/istv%C3%A1n-pat%C3%B3/30/a50/935">Linkedin profile</a></div><a href="https://twitter.com/patoistvan" data-widget-id="317649013933473793" class="twitter-timeline">Tweets by @patoistvan</a>
+          <div class="footer">wintersmith - nodejs static site generator - &copy;2013 István Pató</div>
+        </div>
+      </aside>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/js/jquery.github.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34507510-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

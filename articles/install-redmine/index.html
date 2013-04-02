@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Redmine 2.1.0 on Ubuntu Server 12.04 64bit -Do you see the whole picture?
+    </title>
+    <link href="/favicon.png" rel="icon">
+    <link rel="alternate" href="http://developerof.com/feed.xml" type="application/rss+xml" title="Software Development Blog - developerof.com">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/github.css">
+    <link rel="stylesheet" href="/css/highlight/solarized_dark.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/patoi.css">
+    <meta name="author" content="István Pató">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-inner"><span class="big">Do you see the whole picture?</span>
+        <p class="lead">Software Development Blog - developerof.com</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div style="margin: 20px"><a href="/" class="back">&laquo; back to index</a>
+          <article>
+            <header>
+              <div class="posttimeBig">Sep 23rd, 2012</div>
+              <h2 class="bigger">Install Redmine 2.1.0 on Ubuntu Server 12.04 64bit</h2><a href="https://twitter.com/share" data-via="patoistvan" data-hashtags="developerof.com" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </header>
+            <section class="post"><p>We have been using Redmine for issue tracking and wiki since 2010. Thanks to wiki, everyone is able to access and share information. Major topics are:
+
+</p>
+<ul>
+<li>How to create a new developer environment?</li>
+<li>Rules and conventions: continuous delivery, version number syntax, CI job configuration, coding style, creating specification, etc.</li>
+<li>SCM description: how to perform a build and deployment.</li>
+<li>Runtime environments&apos; data (test, CI, production, DVCS).</li>
+</ul>
+<p>We don&apos;t share constant information over email. If this information isn&apos;t in our wiki, then
+</p>
+<blockquote>
+<p>We write it into the wiki, and share wiki page.
+
+</p>
+</blockquote>
+<p><strong>Wiki helps you to eliminate waste!</strong> Let&apos;s see the installation process!
+<!--more-->
+
+</p>
+<pre><code>sudo su -</code></pre>
+<h3>Install LAMP server</h3>
+<pre><code>tasksel install lamp-server</code></pre>
+<p>Set mysql root password, you need it later! [<em>ref. MYSQL_ROOT_PASSWORD</em>]
+
+</p>
+<h3>Install infrastructure</h3>
+<pre><code>apt-get install ruby-full libmysqlclient-dev libmagickwand-dev libapache2-mod-passenger</code></pre>
+<p>Note: After this operation, 306 MB of additional disk space will be used.
+
+</p>
+<h3>Install Redmine 2.1.0</h3>
+<pre><code><span class="comment"># Create redmine database</span>
+<span class="comment"># You need MYSQL_ROOT_PASSWORD!</span>
+mysql -u root -p
+create database redmine character set utf8;
+create user <span class="string">'redmine'</span>@<span class="string">'localhost'</span> identified by <span class="string">'REDMINEDB_PASSWORD'</span>;
+grant all privileges on redmine.* to <span class="string">'redmine'</span>@<span class="string">'localhost'</span>;
+<span class="keyword">exit</span></code></pre>
+<p>You need <em>REDMINEDB_PASSWORD</em> later!
+
+</p>
+<pre><code><span class="comment"># Download redmine</span>
+wget http:<span class="comment">//rubyforge.org/frs/download.php/76448/redmine-2.1.0.tar.gz</span>
+tar xzvf redmine-<span class="number">2.1</span>.<span class="number">0</span>.tar.gz
+mv redmine-<span class="number">2.1</span>.<span class="number">0</span> redmine
+mv redmine /<span class="keyword">var</span>/www/redmine</code></pre>
+<h3>Configure Redmine 2.1.0</h3>
+<pre><code>cd /<span class="keyword">var</span>/www/redmine
+cp config/database.yml.example config/database.yml
+
+<span class="comment"># Settings Redmine Edit database.yml</span>
+production:
+adapter:        mysql
+database:       redmine
+host:           localhost
+username:       redmine
+password:       REDMINEDB_PASSWORD
+
+<span class="comment"># Install Rake</span>
+apt-get install rake
+apt-get install ruby-bundler</code></pre>
+<p>The next step will take a while (about 2 minutes):
+
+</p>
+<pre><code>cd config
+bundle install --without development test postgresql sqlite</code></pre>
+<p>You must get <em>&quot;Your bundle is complete! Use <code>bundle show [gemname]</code> to see where a bundled gem is installed.&quot;</em>
+
+</p>
+<pre><code>rake generate_secret_token
+
+<span class="comment"># Initialize Redmine</span>
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake redmine:load_default_data</code></pre>
+<h3>Settings Apache</h3>
+<pre><code><span class="comment"># /etc/apache2/mods-available/passenger.conf</span>
+PassengerDefaultUser www-database
+
+<span class="comment">#Edit /etc/apache2/sites-available/default</span>
+<span class="comment"># Overwrite Document root</span>
+DocumentRoot /<span class="keyword">var</span>/www/redmine/<span class="keyword">public</span>
+<span class="comment"># Add Directory element</span>
+&lt;Directory /<span class="keyword">var</span>/www/redmine>
+  RailsBaseURI /redmine
+&lt;/Directory>
+
+<span class="comment"># Set permissions and restart apache2</span>
+a2enmod passenger
+cd /<span class="keyword">var</span>/www
+mkdir redmine/<span class="keyword">public</span>/plugin_assets
+chown -R www-data:www-data redmine/
+chmod -R <span class="number">755</span> redmine/
+chmod -R <span class="number">777</span> redmine/<span class="keyword">public</span>/plugin_assets
+chmod -R <span class="number">777</span> redmine/files
+service apache2 restart</code></pre>
+<p>After all you get an ugly message: <em>apache2: &quot;Could not reliably determine the server&apos;s fully qualified domain name, using 127.0.1.1 for ServerName&quot;</em>
+
+</p>
+<pre><code><span class="comment"># Set server's FQ name, edit /etc/apache2/httpd.conf</span>
+<span class="comment"># Change 'localhost' to real server name</span>
+ServerName YOUR_REAL_SERVER_NAME
+
+<span class="comment"># restart apache</span>
+service apache2 restart</code></pre>
+<p>Navigate browser to redmine server address, and redmine login page will be shown.
+</p>
+<blockquote>
+<p>Change default admin/admin user&apos;s password!!!
+
+</p>
+</blockquote>
+<p><strong>Do not forget</strong> to set Redmine host name after login: click <em>Setting,</em> choose <em>General Tab</em> and set <em>Host name and path</em> to YOUR_REAL_SERVER_NAME
+
+</p>
+<h2>Conclusion</h2>
+<p><img src="http://developerof.com/articles/install-redmine/redmine1.png" alt="Redmine">
+All company must have a central knowledge base that easily access by team members. Use Redmine wiki to share <strong>same information</strong> to everyone and everywhere! <strong>Wiki helps you to eliminate waste!</strong>
+
+
+</p>
+</section>
+          </article>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <div><img src="http://www.gravatar.com/avatar/bccd8a27bbf77651c3ad812e55df4a60.png" title="István Pató">
+          <div class="imgtext">István Pató, application developer and designer. Check out my tweets, and you will know who I am!</div>
+          <div class="mylinks"><a href="https://github.com/patoi">GitHub projects</a><br><a href="http://www.linkedin.com/pub/istv%C3%A1n-pat%C3%B3/30/a50/935">Linkedin profile</a></div><a href="https://twitter.com/patoistvan" data-widget-id="317649013933473793" class="twitter-timeline">Tweets by @patoistvan</a>
+          <div class="footer">wintersmith - nodejs static site generator - &copy;2013 István Pató</div>
+        </div>
+      </aside>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/js/jquery.github.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34507510-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

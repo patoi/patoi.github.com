@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Road To Continuous Delivery -Do you see the whole picture?
+    </title>
+    <link href="/favicon.png" rel="icon">
+    <link rel="alternate" href="http://developerof.com/feed.xml" type="application/rss+xml" title="Software Development Blog - developerof.com">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/github.css">
+    <link rel="stylesheet" href="/css/highlight/solarized_dark.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/patoi.css">
+    <meta name="author" content="István Pató">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-inner"><span class="big">Do you see the whole picture?</span>
+        <p class="lead">Software Development Blog - developerof.com</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div style="margin: 20px"><a href="/" class="back">&laquo; back to index</a>
+          <article>
+            <header>
+              <div class="posttimeBig">Sep 8th, 2012</div>
+              <h2 class="bigger">The Road To Continuous Delivery</h2><a href="https://twitter.com/share" data-via="patoistvan" data-hashtags="developerof.com" data-dnt="true" class="twitter-share-button">Tweet</a>
+            </header>
+            <section class="post"><p>I&apos;ve been working at my company since 1997. I&apos;ve created with my team more than 36 Java web application and 29 Oracle database.
+When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
+We didn&apos;t write unit test just Java main methods, and we didn&apos;t hear about integration test.
+Few years later we have started writing unit tests, and more few years later integration tests.
+<img src="http://developerof.com/articles/continuous-delivery/cucumber-report.png" alt="Cucumber report">
+Today, we have been using several continuous integration and delivery tools: Redmine, Maven, Jenkins, DVCS, Selenium/WebDriver, JUnit, Cucumber.
+To be able to achieve continuous delivery, it has to start with continuous integration.
+Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It&apos;s all about efficiency.
+
+</p>
+<blockquote>
+<p>Continuous delivery is able to raise your efficiency.
+
+</p>
+</blockquote>
+<p>Before you start Continuous Delivery or Continuous Integration, check this list:
+<!--more-->
+</p>
+<h3>Software Configuration Management</h3>
+<ol>
+<li>Creating a new developer environment takes about 30 minutes.</li>
+<li>Version number syntax is carved in stone (snapshots and releases).</li>
+<li>You can create &apos;one step build&apos;.</li>
+<li>Your build repeatable.</li>
+<li>You have runtime environment names.</li>
+<li>Code is able to running on developer machine.</li>
+<li>You have a Wiki, and a page with description of SCM.</li>
+<li>Lead Developer is a &apos;software configuration master&apos; (master and no manager).</li>
+<li>You&apos;ve a bug, task, feature database.</li>
+</ol>
+<h3>Developer activities</h3>
+<ol>
+<li>Developer fixes bugs before writing new code.</li>
+<li>Developer always writes a unit test to reproduce a bug before start a bug fixing.</li>
+<li>Developer can prove the issues have been fixed (unit test, integration test).</li>
+<li>Developer can reproduce a bug on the developer machine, or at least not in the production environment.</li>
+<li>Developer knows what the project goal is.</li>
+<li>Developer knows what she/he is working on today and tomorrow.</li>
+<li>Developers have guidelines: coding style, specification, etc.</li>
+</ol>
+<h3>Team</h3>
+<ol>
+<li>You must have a TEAM. Not programmers, not testers, not designers, not managers.</li>
+<li>Team size between 3-8 people.</li>
+<li>Team is older than 3 months.</li>
+<li>Team is self organized.</li>
+<li>Team visualizes up-to-date their own work, schedules and impediments.</li>
+<li>Team&apos;s able to carry out specifications, codes, automatic tests and releases.</li>
+<li>Team has been continuously developing their own process.</li>
+<li>Team is independent of other teams (or individuals).</li>
+<li>One team - one mission. One mission - one team.</li>
+</ol>
+<h3>Plan</h3>
+<ol>
+<li>Product has a feature list (product backlog).</li>
+<li>You have a roadmap.</li>
+<li>You are able to do less.</li>
+<li>Product has validated before it&apos;s releasing to production.</li>
+<li>All plans have been visualized for teams (Kanban, Scrum).</li>
+</ol>
+<h2>Conclusion</h2>
+<p><img src="http://developerof.com/articles/continuous-delivery/jenkins.png" alt="Jenkins">
+To achieve continuous delivery: it&apos;s not a revolution, it&apos;s an evolution. You need a matured company, so
+in first stage: check the list, and try to achieve goals, and do not forget: to be able to achieve continuous delivery, it has to start with continuous integration.
+
+
+</p>
+</section>
+          </article>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <div><img src="http://www.gravatar.com/avatar/bccd8a27bbf77651c3ad812e55df4a60.png" title="István Pató">
+          <div class="imgtext">István Pató, application developer and designer. Check out my tweets, and you will know who I am!</div>
+          <div class="mylinks"><a href="https://github.com/patoi">GitHub projects</a><br><a href="http://www.linkedin.com/pub/istv%C3%A1n-pat%C3%B3/30/a50/935">Linkedin profile</a></div><a href="https://twitter.com/patoistvan" data-widget-id="317649013933473793" class="twitter-timeline">Tweets by @patoistvan</a>
+          <div class="footer">wintersmith - nodejs static site generator - &copy;2013 István Pató</div>
+        </div>
+      </aside>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/js/jquery.github.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34507510-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

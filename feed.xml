@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>   
+    <title>Do you see the whole picture?</title>
+    <atom:link href="http://developerof.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://developerof.com</link>
+    <description>Software Development Blog - developerof.com</description>
+    <pubDate>Sun, 23 Sep 2012 16:30:00 +0200</pubDate>
+    <generator>The mighty Wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>Install Redmine 2.1.0 on Ubuntu Server 12.04 64bit</title>
+      <link>http://developerof.com/articles/install-redmine/</link>
+      <pubDate>Sun, 23 Sep 2012 16:30:00 +0200</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/install-redmine/</guid>
+      <author></author>
+      <description>&lt;p&gt;We have been using Redmine for issue tracking and wiki since 2010. Thanks to wiki, everyone is able to access and share information. Major topics are:
+
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to create a new developer environment?&lt;/li&gt;
+&lt;li&gt;Rules and conventions: continuous delivery, version number syntax, CI job configuration, coding style, creating specification, etc.&lt;/li&gt;
+&lt;li&gt;SCM description: how to perform a build and deployment.&lt;/li&gt;
+&lt;li&gt;Runtime environments&apos; data (test, CI, production, DVCS).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We don&apos;t share constant information over email. If this information isn&apos;t in our wiki, then
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We write it into the wiki, and share wiki page.
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Wiki helps you to eliminate waste!&lt;/strong&gt; Let&apos;s see the installation process!
+&lt;!--more--&gt;
+
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo su -&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Install LAMP server&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;tasksel install lamp-server&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Set mysql root password, you need it later! [&lt;em&gt;ref. MYSQL_ROOT_PASSWORD&lt;/em&gt;]
+
+&lt;/p&gt;
+&lt;h3&gt;Install infrastructure&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install ruby-full libmysqlclient-dev libmagickwand-dev libapache2-mod-passenger&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note: After this operation, 306 MB of additional disk space will be used.
+
+&lt;/p&gt;
+&lt;h3&gt;Install Redmine 2.1.0&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;# Create redmine database&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# You need MYSQL_ROOT_PASSWORD!&lt;/span&gt;
+mysql -u root -p
+create database redmine character set utf8;
+create user &lt;span class=&quot;string&quot;&gt;'redmine'&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;'localhost'&lt;/span&gt; identified by &lt;span class=&quot;string&quot;&gt;'REDMINEDB_PASSWORD'&lt;/span&gt;;
+grant all privileges on redmine.* to &lt;span class=&quot;string&quot;&gt;'redmine'&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;'localhost'&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You need &lt;em&gt;REDMINEDB_PASSWORD&lt;/em&gt; later!
+
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;# Download redmine&lt;/span&gt;
+wget http:&lt;span class=&quot;comment&quot;&gt;//rubyforge.org/frs/download.php/76448/redmine-2.1.0.tar.gz&lt;/span&gt;
+tar xzvf redmine-&lt;span class=&quot;number&quot;&gt;2.1&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;.tar.gz
+mv redmine-&lt;span class=&quot;number&quot;&gt;2.1&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; redmine
+mv redmine /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/redmine&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Configure Redmine 2.1.0&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;cd /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/redmine
+cp config/database.yml.example config/database.yml
+
+&lt;span class=&quot;comment&quot;&gt;# Settings Redmine Edit database.yml&lt;/span&gt;
+production:
+adapter:        mysql
+database:       redmine
+host:           localhost
+username:       redmine
+password:       REDMINEDB_PASSWORD
+
+&lt;span class=&quot;comment&quot;&gt;# Install Rake&lt;/span&gt;
+apt-get install rake
+apt-get install ruby-bundler&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next step will take a while (about 2 minutes):
+
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd config
+bundle install --without development test postgresql sqlite&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You must get &lt;em&gt;&quot;Your bundle is complete! Use &lt;code&gt;bundle show [gemname]&lt;/code&gt; to see where a bundled gem is installed.&quot;&lt;/em&gt;
+
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rake generate_secret_token
+
+&lt;span class=&quot;comment&quot;&gt;# Initialize Redmine&lt;/span&gt;
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake redmine:load_default_data&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Settings Apache&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;# /etc/apache2/mods-available/passenger.conf&lt;/span&gt;
+PassengerDefaultUser www-database
+
+&lt;span class=&quot;comment&quot;&gt;#Edit /etc/apache2/sites-available/default&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Overwrite Document root&lt;/span&gt;
+DocumentRoot /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/redmine/&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Add Directory element&lt;/span&gt;
+&lt;Directory /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/redmine&gt;
+  RailsBaseURI /redmine
+&lt;/Directory&gt;
+
+&lt;span class=&quot;comment&quot;&gt;# Set permissions and restart apache2&lt;/span&gt;
+a2enmod passenger
+cd /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www
+mkdir redmine/&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;/plugin_assets
+chown -R www-data:www-data redmine/
+chmod -R &lt;span class=&quot;number&quot;&gt;755&lt;/span&gt; redmine/
+chmod -R &lt;span class=&quot;number&quot;&gt;777&lt;/span&gt; redmine/&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;/plugin_assets
+chmod -R &lt;span class=&quot;number&quot;&gt;777&lt;/span&gt; redmine/files
+service apache2 restart&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After all you get an ugly message: &lt;em&gt;apache2: &quot;Could not reliably determine the server&apos;s fully qualified domain name, using 127.0.1.1 for ServerName&quot;&lt;/em&gt;
+
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;# Set server's FQ name, edit /etc/apache2/httpd.conf&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Change 'localhost' to real server name&lt;/span&gt;
+ServerName YOUR_REAL_SERVER_NAME
+
+&lt;span class=&quot;comment&quot;&gt;# restart apache&lt;/span&gt;
+service apache2 restart&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Navigate browser to redmine server address, and redmine login page will be shown.
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Change default admin/admin user&apos;s password!!!
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Do not forget&lt;/strong&gt; to set Redmine host name after login: click &lt;em&gt;Setting,&lt;/em&gt; choose &lt;em&gt;General Tab&lt;/em&gt; and set &lt;em&gt;Host name and path&lt;/em&gt; to YOUR_REAL_SERVER_NAME
+
+&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://developerof.com/articles/install-redmine/redmine1.png&quot; alt=&quot;Redmine&quot;&gt;
+All company must have a central knowledge base that easily access by team members. Use Redmine wiki to share &lt;strong&gt;same information&lt;/strong&gt; to everyone and everywhere! &lt;strong&gt;Wiki helps you to eliminate waste!&lt;/strong&gt;
+
+
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Road To Continuous Delivery</title>
+      <link>http://developerof.com/articles/continuous-delivery/</link>
+      <pubDate>Sat, 08 Sep 2012 18:35:00 +0200</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/continuous-delivery/</guid>
+      <author></author>
+      <description>&lt;p&gt;I&apos;ve been working at my company since 1997. I&apos;ve created with my team more than 36 Java web application and 29 Oracle database.
+When we started at 1997, we had just an email server, a version control (CVS) server and a bug reporting system.
+We didn&apos;t write unit test just Java main methods, and we didn&apos;t hear about integration test.
+Few years later we have started writing unit tests, and more few years later integration tests.
+&lt;img src=&quot;http://developerof.com/articles/continuous-delivery/cucumber-report.png&quot; alt=&quot;Cucumber report&quot;&gt;
+Today, we have been using several continuous integration and delivery tools: Redmine, Maven, Jenkins, DVCS, Selenium/WebDriver, JUnit, Cucumber.
+To be able to achieve continuous delivery, it has to start with continuous integration.
+Of course, we are developing our process: we have some weakness and we can find new challenges. Before you start a continuous delivery process, your company must be mature. It&apos;s all about efficiency.
+
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Continuous delivery is able to raise your efficiency.
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before you start Continuous Delivery or Continuous Integration, check this list:
+&lt;!--more--&gt;
+&lt;/p&gt;
+&lt;h3&gt;Software Configuration Management&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Creating a new developer environment takes about 30 minutes.&lt;/li&gt;
+&lt;li&gt;Version number syntax is carved in stone (snapshots and releases).&lt;/li&gt;
+&lt;li&gt;You can create &apos;one step build&apos;.&lt;/li&gt;
+&lt;li&gt;Your build repeatable.&lt;/li&gt;
+&lt;li&gt;You have runtime environment names.&lt;/li&gt;
+&lt;li&gt;Code is able to running on developer machine.&lt;/li&gt;
+&lt;li&gt;You have a Wiki, and a page with description of SCM.&lt;/li&gt;
+&lt;li&gt;Lead Developer is a &apos;software configuration master&apos; (master and no manager).&lt;/li&gt;
+&lt;li&gt;You&apos;ve a bug, task, feature database.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Developer activities&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Developer fixes bugs before writing new code.&lt;/li&gt;
+&lt;li&gt;Developer always writes a unit test to reproduce a bug before start a bug fixing.&lt;/li&gt;
+&lt;li&gt;Developer can prove the issues have been fixed (unit test, integration test).&lt;/li&gt;
+&lt;li&gt;Developer can reproduce a bug on the developer machine, or at least not in the production environment.&lt;/li&gt;
+&lt;li&gt;Developer knows what the project goal is.&lt;/li&gt;
+&lt;li&gt;Developer knows what she/he is working on today and tomorrow.&lt;/li&gt;
+&lt;li&gt;Developers have guidelines: coding style, specification, etc.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Team&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;You must have a TEAM. Not programmers, not testers, not designers, not managers.&lt;/li&gt;
+&lt;li&gt;Team size between 3-8 people.&lt;/li&gt;
+&lt;li&gt;Team is older than 3 months.&lt;/li&gt;
+&lt;li&gt;Team is self organized.&lt;/li&gt;
+&lt;li&gt;Team visualizes up-to-date their own work, schedules and impediments.&lt;/li&gt;
+&lt;li&gt;Team&apos;s able to carry out specifications, codes, automatic tests and releases.&lt;/li&gt;
+&lt;li&gt;Team has been continuously developing their own process.&lt;/li&gt;
+&lt;li&gt;Team is independent of other teams (or individuals).&lt;/li&gt;
+&lt;li&gt;One team - one mission. One mission - one team.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Plan&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Product has a feature list (product backlog).&lt;/li&gt;
+&lt;li&gt;You have a roadmap.&lt;/li&gt;
+&lt;li&gt;You are able to do less.&lt;/li&gt;
+&lt;li&gt;Product has validated before it&apos;s releasing to production.&lt;/li&gt;
+&lt;li&gt;All plans have been visualized for teams (Kanban, Scrum).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://developerof.com/articles/continuous-delivery/jenkins.png&quot; alt=&quot;Jenkins&quot;&gt;
+To achieve continuous delivery: it&apos;s not a revolution, it&apos;s an evolution. You need a matured company, so
+in first stage: check the list, and try to achieve goals, and do not forget: to be able to achieve continuous delivery, it has to start with continuous integration.
+
+
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Lean Tools of Continuous Delivery</title>
+      <link>http://developerof.com/articles/lean-tools/</link>
+      <pubDate>Sun, 02 Sep 2012 11:02:00 +0200</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/lean-tools/</guid>
+      <author></author>
+      <description>&lt;p&gt;In the past, I have seen a development team who optimized a part of the development process. They focused on write of Java code and automated some code generation. Of course, they have been failed in delivery software. Today we have &lt;a href=&quot;http://www.poppendieck.com/&quot;&gt;Lean Software Development&lt;/a&gt;, so we know what it means &lt;strong&gt;Optimize the Whole&lt;/strong&gt; and &lt;strong&gt;Focus on the Entire Value Stream&lt;/strong&gt;.
+
+&lt;/p&gt;
+&lt;p&gt;We have been using several tools and methods at &lt;a href=&quot;http://www.jurahungaria.com&quot;&gt;my software development team&lt;/a&gt; and we focus on the entire value stream. &lt;em&gt;Lean mentality requires lean tools and conscious choice!&lt;/em&gt;
+&lt;!--more--&gt;
+&lt;/p&gt;
+&lt;h2&gt;Discussions and planning&lt;/h2&gt;
+&lt;p&gt;Tools: &lt;em&gt;Scrum, Whiteboard, Sketchbook, UML notation, Wiki, Email, Chat&lt;/em&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://developerof.com/articles/lean-tools/sketchbook.jpg&quot; alt=&quot;Use sketchbook&quot;&gt;
+We&apos;ve been collecting continuously all requirements, because they are constantly changing. Your best friends are sketchbook and whiteboard. I&apos;m drawing diagrams, screens, data blocks with connections, etc. I’ve always been a big fan of visualization. After all, I&apos;ve publishing results: wiki, email, product backlog, etc. &lt;em&gt;Do not forget to eliminate waste!&lt;/em&gt; Throws out heavyweight and unnecessary tools.
+
+&lt;/p&gt;
+&lt;h2&gt;Continuous delivery&lt;/h2&gt;
+&lt;p&gt;Tools: &lt;em&gt;NetBeans, DVCS, Apache Maven, JUnit, Spring, Automated Integration Test, Automated Acceptance Test, User Acceptance Test, WebDriver, Cucumber, jMeter, Code review, Logging, Redmine&lt;/em&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Please, do not optimize just one part of development process! Optimize the whole process from start to finish! &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;Continuous delivery&lt;/a&gt; helps your team to deliver fast and maintain a good quality.
+&lt;img src=&quot;http://developerof.com/articles/lean-tools/team-discussion.jpg&quot; alt=&quot;Discussions&quot;&gt;
+How we do it: we start with Sprint planning and determine the most important tasks. &lt;strong&gt;Do not waste your time and money!&lt;/strong&gt; Determine the most important tasks! If necessary, programmer and product owner create more detailed specification. &lt;strong&gt;Do not create unnecessary documentation!&lt;/strong&gt; The created specification often just one page! We have been using sketchbook, whiteboard and UML drawing program. After all, we publish it.
+
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We know, why we have been using a particular tool, this is a &lt;strong&gt;conscious choice&lt;/strong&gt;.
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Some examples:
+
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We do not use Eclipse editor, because NetBeans is simpler. We can start Maven project with it faster and cleaner. Tool version update is bug free. Code does not depend on it.&lt;/li&gt;
+&lt;li&gt;We do not use Ant, but Maven. Maven has dependecy managment, life cycle, and is capable to release software from CLI.&lt;/li&gt;
+&lt;li&gt;We use DVCS: Mercurial and Git. We can commit offline, and merge branch between developer. It is tracking changesets, not files.&lt;/li&gt;
+&lt;li&gt;We have been writing unit test. This is a standard solution for testing our daily work: all unit test runs from NetBeans after every code compile, so we are always testing all changes!&lt;/li&gt;
+&lt;li&gt;We use Spring Framework, because &quot;Write Once - Run Anywhere&quot; is working. Spring upgrade on any project are seamless. It doesn&apos;t accumulate technical debt. It is free and costless!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;http://developerof.com/articles/lean-tools/cucumber.jpg&quot; alt=&quot;Cucumber feature file&quot;&gt; Jenkins CI server start testing &lt;em&gt;Integration Tests&lt;/em&gt; and &lt;em&gt;Automated Acceptance Test&lt;/em&gt; after code have been commited to DVCS. &lt;a href=&quot;http://cukes.info/&quot;&gt;Cucumber&lt;/a&gt; is the best tool for AAT (Automated Acceptance Test). I&apos;ve tested several other BDD tools (Spock, jBehave, etc.) before we start using Cucumber. Cucumber feature text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format! Read more: &lt;a href=&quot;http://pragprog.com/book/hwcuc/the-cucumber-book&quot;&gt;The Cucumber Book: Behaviour-Driven Development for Testers and Developers&lt;/a&gt; - sample codes has been written in ruby, but useful to Java developers too.
+
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do not waste your time to try testing all feature with AAT!
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Most important features has been tested with AAT, but not all. We do manual test before we release a new version (UAT), focused on new features (product backlog items). At the end of the Sprint, we show features at Sprint Review Meeting.
+
+&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Choose your tools for &lt;em&gt;Continuous Delivery&lt;/em&gt; and do not forget: &lt;strong&gt;Optimize the Whole&lt;/strong&gt; and &lt;strong&gt;Focus on the Entire Value Stream&lt;/strong&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>When the customer is the biggest risk</title>
+      <link>http://developerof.com/articles/customer-risk/</link>
+      <pubDate>Sat, 01 Sep 2012 15:06:00 +0200</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/customer-risk/</guid>
+      <author></author>
+      <description>&lt;p&gt;When I start a development project with my team, I get at least two constraints: deadline and fixed budget. In my experience, deadline is near and budget is low.
+
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So, there is no time to waste!
+
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Using &lt;a href=&quot;http://www.poppendieck.com&quot;&gt;lean&lt;/a&gt; approach is the best way to the success. What does it mean to be lean? Check out &lt;a href=&quot;http://prezi.com/cihxni4tajvj/lean-software-development/&quot;&gt;my lean presentation&lt;/a&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Sometimes I get more constraints from my customer, e.g: unfamiliar technology, customer&apos;s own framework, developing with non-teammate, obsolate code, etc. This looks like innocent, but it is a real threat to deadline and budget. I call them to &lt;em&gt;known constraints&lt;/em&gt;.
+&lt;!-- more --&gt;
+In addition, sometimes there are &lt;em&gt;latent constraints&lt;/em&gt; on customer side:
+
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;low workplace culture&lt;/li&gt;
+&lt;li&gt;client is not committed&lt;/li&gt;
+&lt;li&gt;no customer experiences in software development&lt;/li&gt;
+&lt;li&gt;unreal budget&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These &lt;em&gt;latent constraints&lt;/em&gt; are very important! My experience that, any of these will lead to failure. In that case, &lt;em&gt;the customer is the biggest risk&lt;/em&gt;.
+
+&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Before you contract to a project consider the following viewpoints:
+
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Project has a reasonable deadline.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;known constraints&lt;/em&gt; are acceptable and you can meet these demands.&lt;/li&gt;
+&lt;li&gt;There isn&apos;t any &lt;em&gt;latent constraint&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you can say yes to all viewpoints, then start the project.
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Blogging with Octopress and Github pages</title>
+      <link>http://developerof.com/articles/octopress/</link>
+      <pubDate>Fri, 31 Aug 2012 18:52:00 +0200</pubDate>
+      <guid isPermaLink="true">http://developerof.com/articles/octopress/</guid>
+      <author></author>
+      <description>&lt;p&gt;I&apos;ve decided to start a blog with &lt;a href=&quot;http://pages.github.com&quot;&gt;Github pages&lt;/a&gt; and &lt;a href=&quot;http://octopress.org&quot;&gt;Octopress&lt;/a&gt; The starting was seamless, except I&apos;ve created github project with wrong name. If you get an &quot;ERROR&quot; when you deploy, then check the github project name.
+
+&lt;/p&gt;
+&lt;p&gt;The correct name contains github.com!
+&lt;img src=&quot;http://developerof.com/articles/octopress/github-error.png&quot; alt=&quot;rake deploy error&quot;&gt;
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
